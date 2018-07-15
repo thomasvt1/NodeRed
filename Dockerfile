@@ -2,10 +2,9 @@ ARG NODE_VERSION=8
 FROM node:${NODE_VERSION}-alpine
 
 # Home directory for Node-RED application source code.
-RUN mkdir -p /usr/src/node-red
-
 # User data directory, contains flows, config and nodes.
-RUN mkdir /data
+RUN mkdir -p /usr/src/node-red && \
+    mkdir /data
 
 RUN apk add --no-cache git bash paxctl  && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*

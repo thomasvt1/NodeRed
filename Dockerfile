@@ -11,8 +11,6 @@ RUN apk add --no-cache git bash paxctl  && \
 
 WORKDIR /usr/src/node-red
 
-COPY package.json /usr/src/node-red/
-
 # Add node-red user so we aren't running as root.
 RUN adduser -h /usr/src/node-red -D -H node-red \
     && chown -R node-red:node-red /data \

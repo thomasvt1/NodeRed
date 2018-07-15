@@ -28,6 +28,8 @@ RUN npm install node-red && \
     npm install node-red-node-feedparser && \
     npm install node-red-node-base64 && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+    
+COPY package.json /usr/src/node-red/
 
 # User configuration directory volume
 EXPOSE 1880

@@ -1,5 +1,4 @@
-ARG NODE_VERSION=10
-FROM node:${NODE_VERSION}-alpine
+FROM node:10-alpine
 
 # Home directory for Node-RED application source code.
 # User data directory, contains flows, config and nodes.

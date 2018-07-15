@@ -26,7 +26,8 @@ RUN npm install node-red && \
     npm install node-red-dashboard && \
     npm install node-red-node-feedparser && \
     npm install node-red-node-base64 && \
-    rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
+    rm -rf /tmp/* /var/tmp/* /var/cache/apk/* && \
+    npm cache clear
 
 # User configuration directory volume
 EXPOSE 1880

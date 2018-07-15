@@ -11,6 +11,8 @@ RUN apk add --no-cache git bash paxctl  && \
 
 WORKDIR /usr/src/node-red
 
+COPY package.json /usr/src/node-red/
+
 # Add node-red user so we aren't running as root.
 RUN adduser -h /usr/src/node-red -D -H node-red \
     && chown -R node-red:node-red /data \
@@ -28,8 +30,6 @@ RUN npm install node-red && \
     npm install node-red-node-feedparser && \
     npm install node-red-node-base64 && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
-    
-COPY package.json /usr/src/node-red/
 
 # User configuration directory volume
 EXPOSE 1880

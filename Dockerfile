@@ -18,9 +18,13 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 
 USER node-red
 
-# package.json contains Node-RED NPM module and node dependencies
-COPY package.json /usr/src/node-red/
-RUN npm install
+# Install Node-RED
+# Install generic extension for Node-RED
+RUN npm install node-red && \
+    npm install node-red-dashboard && \
+    npm install node-red-node-feedparser && \
+    npm install node-red-node-base64 && \
+    rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 # User configuration directory volume
 EXPOSE 1880

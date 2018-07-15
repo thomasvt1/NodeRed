@@ -18,6 +18,9 @@ RUN adduser -h /usr/src/node-red -D -H node-red \
 
 USER node-red
 
+# Install bcrypt before installing node-red
+RUN npm install bcrypt 
+
 # Install Node-RED
 # Install generic extension for Node-RED
 RUN npm install node-red && \

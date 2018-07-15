@@ -22,9 +22,7 @@ USER node-red
 # Install Node-RED
 # Install generic extension for Node-RED
 RUN npm install node-red && \
-    npm install node-red-dashboard && \
     npm install node-red-node-feedparser && \
-    npm install node-red-node-base64 && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* && \
     npm cache clear --force
 

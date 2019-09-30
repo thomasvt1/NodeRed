@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 
 # Home directory for Node-RED application source code.
 # User data directory, contains flows, config and nodes.
